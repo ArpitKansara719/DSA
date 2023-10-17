@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function array(arr) {
+            const n = arr.length;
+            for (let start = 0; start < n; start++) {
+                for (let end = start; end < n; end++) {
+                    for (let i = start; i <= end; i++) {
+                        console.log(arr[i]);
+                    }
+                }
+            }
+        }
+        const inputArray = [1, 2, 3];
+        array(inputArray);
+
+    </script>
+</body>
+
+</html>

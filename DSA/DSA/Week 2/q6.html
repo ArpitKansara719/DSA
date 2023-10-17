@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function msg(str) {
+            for (let i = 0; i < str.length; i++) {
+                for (let j = i + 1; j <= str.length; j++) {
+                    const substring = str.slice(i, j);
+                    console.log(substring);
+                }
+            }
+        }
+        const inputString = "abc";
+        msg(inputString);
+    </script>
+</body>
+
+</html>

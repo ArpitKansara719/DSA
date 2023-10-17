@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function rev(str) {
+       
+        const charArray = str.split("");
+
+        let left = 0;
+        let right = charArray.length - 1;
+
+        while (left < right) {
+          
+          const temp = charArray[left];
+          charArray[left] = charArray[right];
+          charArray[right] = temp;
+
+         
+          left++;
+          right--;
+        }
+
+
+        return charArray.join("");
+      }
+
+
+      const input = "Hello, World!";
+      const reversedString = rev(input);
+      console.log(reversedString); 
+    </script>
+  </body>
+</html>

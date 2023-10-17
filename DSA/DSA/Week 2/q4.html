@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function find(nums, target) {
+            if (nums.length < 2) {
+                return null;
+            }
+
+            nums.sort((a, b) => a - b); 
+
+            let left = 0;
+            let right = nums.length - 1;
+            let nearestSum = Number.MAX_SAFE_INTEGER; 
+            let result = [];
+
+            while (left < right) {
+                const currentSum = nums[left] + nums[right];
+
+                if (Math.abs(currentSum - target) < Math.abs(nearestSum - target)) {
+                    nearestSum = currentSum;
+                    result = [nums[left], nums[right]];
+                }
+
+                if (currentSum < target) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+
+            return result;
+        }
+
+        
+        const nums = [1,2,4,8,16];
+        const target = 10;
+        const nearestSum = find(nums, target);
+        console.log(nearestSum); 
+
+    </script>
+</body>
+
+</html>

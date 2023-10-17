@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function find(arr) {
+        if (arr.length === 0) {
+          return [];
+        }
+
+        let start = 0; 
+        let maxLength = 1; 
+        let currentLength = 1; 
+
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i] > arr[i - 1]) {
+            currentLength++;
+            if (currentLength > maxLength) {
+              maxLength = currentLength;
+              start = i - maxLength + 1;
+            }
+          } else {
+            currentLength = 1;
+          }
+        }
+
+        return arr.slice(start, start + maxLength);
+      }
+
+      
+      const arr = [1, 2, 3, 1, 2, 3, 4, 5];
+      const ans = find(arr);
+      console.log("Longest Increasing Subarray:", ans);
+    </script>
+  </body>
+</html>
